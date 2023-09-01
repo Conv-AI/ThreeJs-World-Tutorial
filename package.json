@@ -13,9 +13,11 @@
     "@react-three/drei": "^9.80.1",
     "@react-three/fiber": "^8.13.6",
     "@react-three/rapier": "^1.1.1",
+    "axios": "^1.4.0",
     "convai-web-sdk": "^0.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "three": "^0.155.0",
     "yuka": "^0.7.8",
     "zustand": "^4.4.0"
