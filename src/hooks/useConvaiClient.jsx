@@ -99,7 +99,7 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.keyCode === 84 && !keyPressed) {
+    if (e.Code === ("KeyT") && !keyPressed) {
       e.stopPropagation();
       e.preventDefault();
       setKeyPressed(true);
@@ -111,7 +111,7 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
     }
   };
   const handleKeyRelease = (e) => {
-    if (e.keyCode === 84 && keyPressed) {
+    if (e.Code === ("KeyT") && keyPressed) {
       e.preventDefault();
       setKeyPressed(false);
       convaiClient.current.endAudioChunk();
@@ -129,13 +129,8 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
   useEffect(() => {
     if (isTalking && !isProximity) {
       convaiClient.current.endAudioChunk();
-      // console.log("stopped talking out of range");
     }
-    // if (isProximity) {
-    //   console.log("The Guide is in range");
-    // } else {
-    //   console.log("The Guide is out of range");
-    // }
+ 
   }, [isProximity]);
   const showHistory = () => {
     setHistory(!history);

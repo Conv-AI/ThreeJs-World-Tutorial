@@ -1,5 +1,5 @@
 import { RigidBody } from "@react-three/rapier";
-import { Platform } from "./Platform";
+import { Platform} from "./Platform";
 import { CharacterController } from "./CharacterController/CharacterController";
 import { Manager } from "../hooks/useYuka";
 import { JacobNpc } from "./Npcs";
