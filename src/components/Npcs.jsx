@@ -10,6 +10,7 @@ import { useConvaiClient } from "../hooks/useConvaiClient";
 import { squaredDistance } from "../helpers/squaredDistance";
 
 const MIN_DISTANCE_JACOB = 20;
+
 const JacobNpc = ({ name, position, heroRef }) => {
   const { client } = useConvaiClient({
     _apiKey: import.meta.env["VITE_CONVAI_APIKEY"],
@@ -88,7 +89,10 @@ const JacobNpc = ({ name, position, heroRef }) => {
       if (distance > MIN_DISTANCE_JACOB) {
         client.setIsProximity(false);
         updateActionState.Jacob("idle");
-        if (clientState?.npcName === client?.npcName) {
+        if (
+          clientState?.npcName === client?.npcName ||
+          client?.characterId === VITE_JACOB_ID
+        ) {
           updateClient(null);
         }
       }

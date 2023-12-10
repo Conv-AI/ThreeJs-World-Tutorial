@@ -55,9 +55,6 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
           let parsedActions = actionResponse.getAction().trim().split("\n");
           setActionText(parsedActions[0].split(", "));
         }
-        if (cookies?.CONVAI_AUTH?.displayName) {
-          setUserName(cookies.CONVAI_AUTH.displayName);
-        }
       });
 
       const fetchData = async () => {
@@ -98,8 +95,29 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
     setUserText(text);
   };
 
+  // const handleKeyPress = (e) => {
+  //   console.log(e.Code)
+  //   if (e.Code === ("KeyT") && !keyPressed) {
+  //     e.stopPropagation();
+  //     e.preventDefault();
+  //     setKeyPressed(true);
+  //     finalizedUserText.current = "";
+  //     npcTextRef.current = "";
+  //     setUserText("");
+  //     setNpcText("");
+  //     convaiClient.current.startAudioChunk();
+  //   }
+  // };
+  // const handleKeyRelease = (e) => {
+  //   if (e.Code === ("KeyT") && keyPressed) {
+  //     e.preventDefault();
+  //     setKeyPressed(false);
+  //     convaiClient.current.endAudioChunk();
+  //   }
+  // };
+
   const handleKeyPress = (e) => {
-    if (e.Code === ("KeyT") && !keyPressed) {
+    if (e.keyCode === 84 && !keyPressed) {
       e.stopPropagation();
       e.preventDefault();
       setKeyPressed(true);
@@ -111,7 +129,7 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
     }
   };
   const handleKeyRelease = (e) => {
-    if (e.Code === ("KeyT") && keyPressed) {
+    if (e.keyCode === 84 && keyPressed) {
       e.preventDefault();
       setKeyPressed(false);
       convaiClient.current.endAudioChunk();
