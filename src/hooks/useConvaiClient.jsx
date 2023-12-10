@@ -95,29 +95,9 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
     setUserText(text);
   };
 
-  // const handleKeyPress = (e) => {
-  //   console.log(e.Code)
-  //   if (e.Code === ("KeyT") && !keyPressed) {
-  //     e.stopPropagation();
-  //     e.preventDefault();
-  //     setKeyPressed(true);
-  //     finalizedUserText.current = "";
-  //     npcTextRef.current = "";
-  //     setUserText("");
-  //     setNpcText("");
-  //     convaiClient.current.startAudioChunk();
-  //   }
-  // };
-  // const handleKeyRelease = (e) => {
-  //   if (e.Code === ("KeyT") && keyPressed) {
-  //     e.preventDefault();
-  //     setKeyPressed(false);
-  //     convaiClient.current.endAudioChunk();
-  //   }
-  // };
 
   const handleKeyPress = (e) => {
-    if (e.keyCode === 84 && !keyPressed) {
+    if (e.code === "KeyT" && !keyPressed) {
       e.stopPropagation();
       e.preventDefault();
       setKeyPressed(true);
@@ -129,7 +109,7 @@ export const useConvaiClient = ({ _apiKey, _characterId }) => {
     }
   };
   const handleKeyRelease = (e) => {
-    if (e.keyCode === 84 && keyPressed) {
+    if (e.code === "KeyT" && keyPressed) {
       e.preventDefault();
       setKeyPressed(false);
       convaiClient.current.endAudioChunk();
