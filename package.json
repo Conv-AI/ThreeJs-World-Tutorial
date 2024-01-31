@@ -14,7 +14,7 @@
     "@react-three/fiber": "^8.13.6",
     "@react-three/rapier": "^1.1.1",
     "axios": "^1.4.0",
-    "convai-web-sdk": "^0.0.5",
+    "convai-web-sdk": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
